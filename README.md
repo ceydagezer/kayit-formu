@@ -50,13 +50,14 @@ kayit-formu/
   <img src="screenshots/bootstrap-form.png" alt="Bootstrap Form" width="400">
   <img src="screenshots/basic-form.png" alt="Basic Form" width="400">
 </p>
+
 ### Saf HTML + CSS
 **Giriş Sayfası**
-```
+
 ![Basic Giriş](screenshots/basic-giris.png)
-```
+
 **Başvuru Formu**
-```
+
 ![Basic Form](screenshots/basic-form.png)
 
 ---
