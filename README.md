@@ -38,7 +38,7 @@ kayit-formu/
 - Tam doğrulama ve hata mesajları
 ```
 ---
-```
+
 ## 📸 Ekran Görselleri
 
 <p align="center">
