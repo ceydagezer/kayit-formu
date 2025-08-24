@@ -7,7 +7,7 @@ Bu proje, **iki farklı yaklaşımla** modern bir **giriş ve başvuru formu uyg
 ---
 
 ## 🚀 Proje Yapısı
-
+```
 kayit-formu/
 ├── 01-bootstrap4.6/
 │ ├── index.html # Giriş sayfası (Bootstrap)
@@ -20,7 +20,7 @@ kayit-formu/
 │ ├── bootstrap-form.png # Bootstrap form ekran görüntüsü
 │ ├── basic-form.png # Saf CSS form ekran görüntüsü
 └── README.md
-
+```
 ---
 
 ## 🎨 Özellikler
