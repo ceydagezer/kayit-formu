@@ -73,7 +73,7 @@ kayit-formu/
 4. Tarayıcıda çalıştırmak için VS Code Live Server kullanabilirsin.
 
 ---
-
+```
 📌 Notlar
 İki farklı yöntem aynı projede yan yana sunuldu.
 
@@ -95,3 +95,4 @@ Ceyda Gezer
 
 🏷️ Etiketler  
 `HTML` `CSS` `Bootstrap` `Form Design` `Responsive Web Design`
+```
