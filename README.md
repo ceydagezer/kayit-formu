@@ -1,9 +1,10 @@
+```
 # 📌 Kayıt Formu Projesi
 
 Bu proje, **iki farklı yaklaşımla** modern bir **giriş ve başvuru formu uygulaması** geliştirmek için hazırlandı:  
 1. **Bootstrap 4.6** kullanılarak hızlı ve hazır bileşenlerle tasarım.  
 2. **Saf HTML + CSS** kullanılarak sıfırdan, tamamen özelleştirilmiş tasarım.
-
+```
 ---
 
 ## 🚀 Proje Yapısı
@@ -22,7 +23,7 @@ kayit-formu/
 └── README.md
 ```
 ---
-
+```
 ## 🎨 Özellikler
 
 ### **Bootstrap 4.6 Versiyonu**
@@ -35,9 +36,9 @@ kayit-formu/
 - Modern, koyu renkli tema
 - Hafif, hızlı yüklenen sayfalar
 - Tam doğrulama ve hata mesajları
-
+```
 ---
-
+```
 ## 📸 Ekran Görselleri
 
 ### Bootstrap 4.6
@@ -55,9 +56,9 @@ kayit-formu/
 
 **Başvuru Formu**
 ![Basic Form](screenshots/basic-form.png)
-
+```
 ---
-
+```
 ## 🧩 Kurulum ve Kullanım
 
 1. Projeyi bilgisayarına klonla:
@@ -71,7 +72,7 @@ kayit-formu/
    02-basic-html-css klasöründeki index.html dosyasını aç.
 
 4. Tarayıcıda çalıştırmak için VS Code Live Server kullanabilirsin.
-
+```
 ---
 ```
 📌 Notlar
