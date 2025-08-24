@@ -40,21 +40,25 @@ kayit-formu/
 ---
 ```
 ## 📸 Ekran Görselleri
-```
+
 ### Bootstrap 4.6
 **Giriş Sayfası**
+```
 ![Bootstrap Giriş](screenshots/bootstrap-giris.png)
-
+```
 **Başvuru Formu**
+```
 ![Bootstrap Formu](screenshots/bootstrap-form.png)
 
 ---
-
+```
 ### Saf HTML + CSS
 **Giriş Sayfası**
+```
 ![Basic Giriş](screenshots/basic-giris.png)
-
+```
 **Başvuru Formu**
+```
 ![Basic Form](screenshots/basic-form.png)
 
 ---
