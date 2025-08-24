@@ -41,17 +41,15 @@ kayit-formu/
 ```
 ## 📸 Ekran Görselleri
 
-### Bootstrap 4.6
-**Giriş Sayfası**
-```
-![Bootstrap Giriş](screenshots/bootstrap-giris.png)
-```
-**Başvuru Formu**
-```
-![Bootstrap Formu](screenshots/bootstrap-form.png)
+<p align="center">
+  <img src="screenshots/bootstrap-giris.png" alt="Bootstrap Giriş" width="400">
+  <img src="screenshots/basic-giris.png" alt="Basic Giriş" width="400">
+</p>
 
----
-```
+<p align="center">
+  <img src="screenshots/bootstrap-form.png" alt="Bootstrap Form" width="400">
+  <img src="screenshots/basic-form.png" alt="Basic Form" width="400">
+</p>
 ### Saf HTML + CSS
 **Giriş Sayfası**
 ```
