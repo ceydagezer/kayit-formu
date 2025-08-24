@@ -1,0 +1,93 @@
+:root {
+  --bg: #0f172a;        
+  --card: #111827;      
+  --text: #e5e7eb;      
+  --muted: #9ca3af;     
+  --primary: #2563eb;   
+  --success: #16a34a;   
+  --radius: 12px;
+  --gap: 14px;
+  --shadow: 0 8px 24px rgba(0,0,0,.35);
+}
+
+* { box-sizing: border-box; margin:0; padding:0; }
+body {
+  background: linear-gradient(145deg, #0b1026, #0f172a 55%, #0a122d);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 16px 64px;
+}
+
+.nav {
+  display: flex; align-items: center; height: 56px;
+  padding: 0 16px; background: #111827; color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.title { text-align:center; margin: 28px 0 20px; font-size: 20px; }
+
+.row { display: grid; gap: var(--gap); }
+@media (min-width: 768px) {
+  .row { grid-template-columns: 1fr min(600px, 90%) 1fr; }
+}
+.col { grid-column: 2; }
+
+.card {
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.card-body { padding: 22px; }
+
+.field { margin-bottom: 16px; }
+label { display:block; margin-bottom: 6px; font-weight: 600; }
+input[type="text"],
+input[type="email"],
+input[type="password"], 
+input[type="date"],
+textarea,
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 8px;
+  background: #0b1324;
+  color: var(--text);
+}
+input::placeholder, textarea::placeholder { color: #9aa3b2; }
+small.muted { color: var(--muted); display:block; margin-top:6px; }
+
+.helpers {
+  display:grid; grid-template-columns: repeat(2,1fr); gap: var(--gap);
+}
+@media (max-width: 520px) {
+  .helpers { grid-template-columns: 1fr; }
+}
+
+.actions { margin-top: 18px; }
+.btn {
+  padding: 12px 16px; border-radius: 8px; border: none;
+  color:#fff; cursor:pointer; font-weight:600;
+}
+.btn-primary { background: var(--primary); width: 100%; }
+.btn-success { background: var(--success); width: 100%; }
+.btn:disabled { opacity:.7; cursor:not-allowed; }
+
+.alert {
+  margin-top: 18px; padding: 12px 14px;
+  border-radius: 8px; background: rgba(22,163,74,.15);
+  border: 1px solid rgba(22,163,74,.5); color: #bbf7d0;
+  text-align:center;
+}
+.hidden { display:none; }
+
+.invalid input,
+.invalid textarea,
+.invalid select { border-color: #ef4444; }
+.error { color:#fca5a5; font-size: 13px; margin-top:6px; }

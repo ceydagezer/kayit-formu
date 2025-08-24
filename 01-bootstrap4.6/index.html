@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Giriş Sayfası</title>
+
+  <!-- Bootstrap 4.6 CSS (CDN) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+  />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Form Demo</a>
+  </nav>
+
+  <!-- İçerik -->
+  <div class="container py-5">
+    <h1 class="h4 mb-4 text-center">Giriş Yap</h1>
+
+    <div class="row">
+      <div class="col-12 col-md-8 col-lg-5 mx-auto">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <form id="loginForm" novalidate>
+              <!-- E-posta -->
+              <div class="form-group">
+                <label for="emailInput">E-posta Adresi</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="emailInput"
+                  placeholder="ornek@site.com"
+                  required
+                />
+                <div class="invalid-feedback">Lütfen geçerli bir e-posta girin.</div>
+              </div>
+
+              <!-- Şifre -->
+              <div class="form-group">
+                <label for="passwordInput">Şifre</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="passwordInput"
+                  placeholder="Şifreniz"
+                  minlength="6"
+                  required
+                />
+                <div class="invalid-feedback">Şifre en az 6 karakter olmalı.</div>
+              </div>
+
+              <!-- Buton -->
+              <button type="submit" class="btn btn-primary btn-block mt-2">
+                Giriş Yap
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 4.6 JS (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Form Yönlendirme -->
+  <script>
+    (function () {
+      var form = document.getElementById('loginForm');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        if (form.checkValidity()) {
+          // Giriş başarılı → başvuru sayfasına yönlendir
+          window.location.href = "basvuru.html";
+        } else {
+          // Tarayıcı uyarılarını tetikle
+          form.classList.add('was-validated');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

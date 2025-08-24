@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Giriş Sayfası</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="nav"><div class="brand">Form Demo (Saf CSS)</div></nav>
+
+  <div class="container">
+    <h1 class="title">Giriş Yap</h1>
+
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <form id="loginForm" novalidate>
+              <!-- E-posta -->
+              <div class="field">
+                <label for="email">E-posta Adresi</label>
+                <input id="email" type="email" placeholder="ornek@site.com" required />
+                <div class="error hidden" id="emailErr">Lütfen geçerli bir e-posta girin.</div>
+              </div>
+
+              <!-- Şifre -->
+              <div class="field">
+                <label for="password">Şifre</label>
+                <input id="password" type="password" placeholder="Şifreniz" minlength="6" required />
+                <div class="error hidden" id="passErr">Şifre en az 6 karakter olmalı.</div>
+              </div>
+
+              <!-- Buton -->
+              <div class="actions">
+                <button class="btn btn-primary" type="submit">Giriş Yap</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="alert hidden" id="hint">Giriş başarılı, yönlendiriliyorsunuz…</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var f = document.getElementById('loginForm');
+      var email = document.getElementById('email');
+      var pass = document.getElementById('password');
+      var emailErr = document.getElementById('emailErr');
+      var passErr = document.getElementById('passErr');
+      var hint = document.getElementById('hint');
+
+      function show(el){ el.classList.remove('hidden'); }
+      function hide(el){ el.classList.add('hidden'); }
+
+      f.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var ok = true;
+
+        // e-posta kontrol
+        if (!email.validity.valid) {
+          email.parentElement.classList.add('invalid'); show(emailErr); ok = false;
+        } else { email.parentElement.classList.remove('invalid'); hide(emailErr); }
+
+        // şifre kontrol
+        if (!pass.validity.valid) {
+          pass.parentElement.classList.add('invalid'); show(passErr); ok = false;
+        } else { pass.parentElement.classList.remove('invalid'); hide(passErr); }
+
+        if (!ok) return;
+
+        show(hint);
+        setTimeout(function(){
+          window.location.href = 'basvuru.html';
+        }, 600);
+      });
+    })();
+  </script>
+</body>
+</html>

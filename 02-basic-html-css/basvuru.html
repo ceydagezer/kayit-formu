@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Başvuru Formu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="nav"><div class="brand">Başvuru Formu (Saf CSS)</div></nav>
+
+  <div class="container">
+    <h1 class="title">İşe Alım Başvuru Formu</h1>
+
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <form id="applicationForm" novalidate>
+              <!-- Ad Soyad + Doğum Tarihi -->
+              <div class="helpers">
+                <div class="field">
+                  <label for="fullName">Ad Soyad</label>
+                  <input id="fullName" type="text" placeholder="Adınız ve soyadınız" required />
+                  <div class="error hidden" id="nameErr">Lütfen ad soyad girin.</div>
+                </div>
+                <div class="field">
+                  <label for="birthDate">Doğum Tarihi</label>
+                  <input id="birthDate" type="date" required />
+                  <div class="error hidden" id="birthErr">Lütfen doğum tarihi seçin.</div>
+                </div>
+              </div>
+
+              <!-- Cinsiyet -->
+              <div class="field">
+                <label>Cinsiyet</label>
+                <div class="helpers">
+                  <label><input type="radio" name="gender" value="Erkek" required /> Erkek</label>
+                  <label><input type="radio" name="gender" value="Kadın" required /> Kadın</label>
+                </div>
+                <div class="error hidden" id="genderErr">Lütfen cinsiyet seçin.</div>
+              </div>
+
+              <!-- Hobiler -->
+              <div class="field">
+                <label for="hobbies">Hobiler</label>
+                <input id="hobbies" type="text" placeholder="Örn: Spor, kitap okuma, satranç…" />
+                <small class="muted">Hobilerinizi virgülle ayırabilirsiniz.</small>
+              </div>
+
+              <!-- Eğitim + Okul -->
+              <div class="helpers">
+                <div class="field">
+                  <label for="educationLevel">Eğitim Durumu</label>
+                  <select id="educationLevel" required>
+                    <option value="">Seçiniz…</option>
+                    <option>Lise</option>
+                    <option>Ön Lisans</option>
+                    <option>Lisans</option>
+                    <option>Yüksek Lisans</option>
+                    <option>Doktora</option>
+                  </select>
+                  <div class="error hidden" id="eduErr">Lütfen eğitim durumunuzu seçin.</div>
+                </div>
+                <div class="field">
+                  <label for="schoolName">Okul / Üniversite</label>
+                  <input id="schoolName" type="text" placeholder="Mezun olduğunuz/olacağınız okul" required />
+                  <div class="error hidden" id="schoolErr">Lütfen okul adını girin.</div>
+                </div>
+              </div>
+
+              <!-- Adres -->
+              <div class="field">
+                <label for="address">Adres</label>
+                <textarea id="address" rows="3" placeholder="Adresinizi girin" required></textarea>
+                <div class="error hidden" id="addrErr">Lütfen adresinizi girin.</div>
+              </div>
+
+              <!-- Yetenekler -->
+              <div class="field">
+                <label for="skills">Yetenekler</label>
+                <textarea id="skills" rows="3" placeholder="Örn: HTML, CSS, JS, PHP, Excel, İngilizce…"></textarea>
+              </div>
+
+              <!-- Deneyim -->
+              <div class="field">
+                <label for="experience">Deneyim</label>
+                <textarea id="experience" rows="4" placeholder="Önceki işleriniz, stajlar, gönüllü çalışmalar…"></textarea>
+              </div>
+
+              <!-- Sertifikalar -->
+              <div class="field">
+                <label for="certificates">Sertifikalar</label>
+                <input id="certificates" type="file" multiple accept=".pdf,.jpg,.jpeg,.png" />
+                <small class="muted">Seçtiğiniz dosyalar aşağıda listelenir:</small>
+                <ul id="fileList" class="muted" style="margin-top:8px;"></ul>
+              </div>
+
+              <!-- Buton -->
+              <div class="actions">
+                <button class="btn btn-success" type="submit">Başvuruyu Gönder</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="alert hidden" id="successMsg">Başvurunuz başarıyla gönderildi!</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var f = document.getElementById('applicationForm');
+      var fileInput = document.getElementById('certificates');
+      var fileList = document.getElementById('fileList');
+      var success = document.getElementById('successMsg');
+
+      // Dosya isimlerini listele
+      fileInput.addEventListener('change', function () {
+        fileList.innerHTML = '';
+        Array.prototype.forEach.call(fileInput.files || [], function (f) {
+          var li = document.createElement('li'); li.textContent = f.name; fileList.appendChild(li);
+        });
+      });
+
+      f.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var ok = true;
+
+        function check(input, errId) {
+          var errEl = document.getElementById(errId);
+          if (!input.value.trim()) {
+            input.parentElement.classList.add('invalid');
+            errEl.classList.remove('hidden');
+            ok = false;
+          } else {
+            input.parentElement.classList.remove('invalid');
+            errEl.classList.add('hidden');
+          }
+        }
+
+        // Kontroller
+        check(document.getElementById('fullName'), 'nameErr');
+        check(document.getElementById('birthDate'), 'birthErr');
+        check(document.getElementById('schoolName'), 'schoolErr');
+        check(document.getElementById('address'), 'addrErr');
+
+        // Cinsiyet kontrolü
+        var genderErr = document.getElementById('genderErr');
+        var genderChecked = !!f.querySelector('input[name="gender"]:checked');
+        if (!genderChecked) { genderErr.classList.remove('hidden'); ok = false; }
+        else genderErr.classList.add('hidden');
+
+        // Eğitim kontrolü
+        var edu = document.getElementById('educationLevel');
+        var eduErr = document.getElementById('eduErr');
+        if (!edu.value) { edu.parentElement.classList.add('invalid'); eduErr.classList.remove('hidden'); ok = false; }
+        else { edu.parentElement.classList.remove('invalid'); eduErr.classList.add('hidden'); }
+
+        if (!ok) return;
+
+        success.classList.remove('hidden');
+        f.reset();
+        fileList.innerHTML = '';
+
+        setTimeout(() => success.classList.add('hidden'), 2500);
+      });
+    })();
+  </script>
+</body>
+</html>
