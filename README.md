@@ -38,9 +38,9 @@ kayit-formu/
 - Tam doğrulama ve hata mesajları
 ```
 ---
-
+```
 ## 📸 Ekran Görselleri
-
+```
 <p align="center">
   <img src="screenshots/bootstrap-giris.png" alt="Bootstrap Giriş" width="400">
   <img src="screenshots/basic-giris.png" alt="Basic Giriş" width="400">
@@ -51,16 +51,8 @@ kayit-formu/
   <img src="screenshots/basic-form.png" alt="Basic Form" width="400">
 </p>
 
-### Saf HTML + CSS
-**Giriş Sayfası**
-
-![Basic Giriş](screenshots/basic-giris.png)
-
-**Başvuru Formu**
-
-![Basic Form](screenshots/basic-form.png)
-
 ---
+
 ```
 ## 🧩 Kurulum ve Kullanım
 
